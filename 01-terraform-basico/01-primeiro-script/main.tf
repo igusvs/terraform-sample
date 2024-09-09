@@ -2,12 +2,11 @@ terraform {
   required_version = ">= 0.12"
 
   required_providers {
-    aws {
-      source = "hashicorpo/aws"
+    aws = {
+      source  = "hashicorp/aws"
       version = "5.66.0"
     }
   }
-
 }
 
 provider "aws" {
@@ -21,5 +20,6 @@ resource "aws_s3_bucket" "bucket" {
     Name        = "My bucket"
     Environment = "Dev"
     ManagedBy   = "Terraform"
+    Owner       = "Igor"
   }
 }
